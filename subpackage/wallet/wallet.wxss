@@ -1,0 +1,45 @@
+/* pages/wallet/wallet.wxss */
+.wallet-wrap{
+  padding: 40rpx;
+}
+.wallet-wrap > view:nth-child(1){
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.wallet-wrap > view:nth-child(1) > image {
+  width: 64rpx;
+  height: 64rpx;
+  margin-right: 20rpx;
+}
+.wallet-text{
+  margin-right: 40rpx;
+}
+.withdraw{
+  width: 100rpx;
+  height: 50rpx;
+  line-height: 42rpx;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.recharge{
+  text-align: center;
+  margin-top: 60rpx;
+  height: 80rpx;
+  line-height: 78rpx;
+}
+.capital-flow{
+  display: flex;
+  height: 80rpx;
+  line-height: 78rpx;
+  padding: 0 40rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.capital-flow> image{
+  width: 30rpx;
+  height: 30rpx;
+}

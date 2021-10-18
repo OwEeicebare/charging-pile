@@ -1,0 +1,74 @@
+/* pages/mine/mine.wxss */
+
+.my-info {
+  height: 200rpx;
+  border-top-left-radius: 12rpx;
+  border-top-right-radius: 12rpx;
+  display: flex;
+  align-items: center;
+}
+
+.wx-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 40rpx;
+  overflow: hidden;
+}
+
+.wx-avatar > image {
+  width: 100%;
+  height: 100%;
+}
+
+.wallet-wrap, .wallet, .coupon {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.wallet-wrap > view {
+  flex: 1;
+  padding: 40rpx;
+}
+
+.wallet > image, .coupon > image {
+  width: 64rpx;
+  height: 64rpx;
+  margin-right: 20rpx;
+}
+
+.wallet::after {
+  content: '';
+  position: absolute;
+  left: calc(100% - 2rpx);
+  top: calc(50% - 20rpx);
+  background-color: #000;
+  width: 4rpx;
+  height: 40rpx;
+}
+
+/* normal-question */
+
+.normal-question, .contact {
+  display: flex;
+  height: 80rpx;
+  line-height: 78rpx;
+  padding: 0 40rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.normal-question image {
+  width: 30rpx;
+  height: 30rpx;
+}
+.coupon-link{
+  display: flex;
+  align-items: center;
+}
+.coupon-link image{
+  margin-left: 10rpx;
+}
+/* normal-question */

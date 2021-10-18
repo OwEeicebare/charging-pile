@@ -1,0 +1,19 @@
+<import src="../../template/state/state.wxml" />
+<!--pages/question/question.wxml-->
+<view class="page {{list.length ? 'page-grey' : ''}}">
+  <view class="common-font">
+    <view class="question-list" wx:if="{{list.length}}">
+      <view class="question-item" wx:for="{{list}}" wx:key="{{item.id}}">
+        <view class="question-type" bindtap="openAnswer" data-id="{{item.id}}">
+          <text>{{item.questionName}}</text>
+          <image src="{{item.id === lastId ? imageUp : imageSrc}}"></image>
+        </view>
+        <view class="qustion-answer" wx:if="{{item.id === lastId}}">
+          <text>{{item.questionDescribe}}</text>
+          <view class="question-box default-bg"></view>
+        </view>
+      </view>
+    </view>
+    <template is="state" data="{{...noCoupon}}" wx:else></template>
+  </view>
+</view>

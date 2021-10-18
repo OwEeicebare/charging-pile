@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>icon_nav_order_n</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_nav_order_n">
+            <rect id="Rectangle" x="0" y="0" width="40" height="40"></rect>
+            <rect id="Rectangle" stroke="#D9D9D9" stroke-width="4" x="5" y="2" width="28" height="36" rx="3"></rect>
+            <path d="M33,2 C35.209139,2 37,3.790861 37,6 C37,8.209139 35.209139,10 33,10 L9,10 C11.209139,10 13,8.209139 13,6 C13,3.790861 11.209139,2 9,2 L33,2 Z" id="Combined-Shape" stroke="#D9D9D9" stroke-width="4" fill="#F0F0F0" stroke-linejoin="round"></path>
+            <path d="M19,26 C20.1045695,26 21,26.8954305 21,28 C21,29.1045695 20.1045695,30 19,30 L13,30 C11.8954305,30 11,29.1045695 11,28 C11,26.8954305 11.8954305,26 13,26 L19,26 Z M25,16 C26.1045695,16 27,16.8954305 27,18 C27,19.1045695 26.1045695,20 25,20 L13,20 C11.8954305,20 11,19.1045695 11,18 C11,16.8954305 11.8954305,16 13,16 L25,16 Z" id="Combined-Shape" fill="#D9D9D9"></path>
+        </g>
+    </g>
+</svg>

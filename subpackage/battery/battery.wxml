@@ -1,0 +1,64 @@
+<!--pages/battery/battery.wxml-->
+<import src="../../template/eleInfo/eleInfo.wxml" />
+
+<view class="page common-margin">
+  <view class="common-padding">
+    <view class="common-font">设备已连接，请确认充电</view>
+    <!-- battery-info -->
+    <view class="common-margin battery-info">
+      <view class="battery-inner common-radius common-border common-font">
+        <view class="">电桩信息</view>
+        <view class="common-margin">电桩编号：{{chargeInfo.eleNumber}}</view>
+        <view class="common-margin flex-between">
+          <text>当前费率：{{chargeInfo.rating}}元/度</text>
+          <view class="common-border rules" bindtap="openRules">
+            <image src="../../images/home/icon_right_arrow.svg"></image>
+          </view>
+        </view>
+        <view class="common-margin flex-between">
+          <text>最大SOC：{{soc}}%</text>
+          <view class="common-border common-mini-radius common-middle-font set-soc" bindtap="setSoc">设置</view>
+        </view>
+      </view>
+    </view>
+    <!-- current-account -->
+    <view class="current-account">
+      <text>当前余额：{{chargeInfo.balance}}元</text>
+      <button class="recharge common-border default-bg common-mini-radius common-middle-font" bindtap="toRecharge" hover-class="none">充值</button>
+    </view>
+    <view class="pay-money">
+      <view class="pay-title">
+        <text>请选择充电金额：</text>
+      </view>
+      <view class="pays">
+        <view wx:for="{{pays}}" class="common-margin common-border {{item.money==activeMoney ? 'green-bg' : ''}}" bindtap="changeMoney" data-index="{{item.money}}">￥{{item.money}}</view>
+      </view>
+    </view>
+    <view class="customize-money">
+      <text>￥</text>
+      <input placeholder="自定义充电金额" value="{{chargeMoney}}" type="digit" placeholder-class="customize-placeholder" bindinput="setChargeMoney"></input>
+    </view>
+    <view class="pay-btn">
+      <view class="battery-btn-inner common-mini-radius common-border {{ableState ? 'green' : 'grey'}} common-font" bindtap="immediatelyEle">立即充电</view>
+    </view>
+  </view>
+  <view bindtap="closeList" wx:if="{{listShow}}">
+    <template is="rules" data="{{...rules}}"></template>
+  </view>
+  <!-- 设置soc -->
+  <view class="set-soc-container common-font" wx:if="{{setAble}}">
+    <view class="set-soc-inner">
+      <view class="common-border default-bg common-mini-radius">
+        <text class="common-font">最大SOC设置</text>
+        <view class="soc-input">
+          <input type="number" value="{{soc}}" bindinput="inputNumber" adjust-position maxlength="2" focus="{{true}}"></input>
+          <text>%</text>
+        </view>
+        <button class="common-mini-radius common-border ensure-btn {{submitAble ? 'green' : 'grey'}}" bindtap="ensure" hover-class="none">确认</button>
+        <view class="close-set common-border">
+          <image src="../../images/home/icon_close.svg" bindtap="closeSet"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

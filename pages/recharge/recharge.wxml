@@ -1,0 +1,31 @@
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<import src="../../template/popup/popup.wxml" />
+<import src="../../template/state/state.wxml" />
+<!--pages/recharge/recharge.wxml-->
+<view class="page">
+  <view class="common-padding common-font recharge-wrap" animation="{{animationData}}">
+    <view class="common-margin">
+      <text>当前余额：{{filters.toFix(1234, 2)}}元</text>
+    </view>
+    <!-- amount -->
+    <view class="amount" bindtap="changeMoney">
+      <view class="common-border common-radius {{activedMoney === 10 ? 'green' : ''}}" data-money="10">￥10</view>
+      <view class="common-border common-radius {{activedMoney === 50 ? 'green' : ''}}" data-money="50">￥50</view>
+      <view class="common-border common-radius {{activedMoney === 100 ? 'green' : ''}}" data-money="100">￥100</view>
+      <view class="common-border common-radius common-margin {{activedMoney === 200 ? 'green' : ''}}" data-money="200">￥200</view>
+      <view class="common-border common-radius common-margin {{activedMoney === 500 ? 'green' : ''}}" data-money="500">￥500</view>
+      <view class="common-border common-radius common-margin {{activedMoney === 1000 ? 'green' : ''}}" data-money="1000">￥1000</view>
+    </view>
+    <!-- customize-money -->
+    <view class="customize-money">
+      <text>￥</text>
+      <input placeholder="请输入充值金额" class="customize-input" placeholder-class="placeholderClass" type="digit" value="{{value}}" bindinput="inputMoney"></input>
+    </view>
+    <!-- ensure-recharge -->
+    <button class="common-border common-radius ensure-recharge {{ableState ? 'green' : 'grey'}}" bindtap="recharge">确定</button>
+  </view>
+  <template is="state" data="{{...noCoupon}}" wx:if="{{rechargeState}}"></template>
+  <view bindtap="closePopUp" wx:if="{{rechargeState && popShow}}">
+    <template is="popup" data="{{...coupon}}"></template>
+  </view>
+</view>

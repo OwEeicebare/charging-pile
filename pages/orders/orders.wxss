@@ -1,0 +1,46 @@
+@import "../../template/state/state.wxss";
+/* pages/orders/orders.wxss */
+.order-type{
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  height: 70rpx;
+  line-height: 64rpx;
+}
+.order-type > view{
+  flex: 1;
+}
+.order-type > view:nth-child(1).actived{
+  border-right: 4rpx solid #000;
+}
+.order-type > view:nth-child(2).actived{
+  border-left: 4rpx solid #000;
+}
+.orders-wrap{
+  margin-top: 40rpx;
+  width: 100%;
+  overflow: hidden;
+}
+.orders-innner{
+  width: 200%;
+  display: flex;
+}
+.orders-innner > view{
+  flex: 1;
+}
+/* ing-list */
+.ing-item, .finish-item{
+  padding: 40rpx;
+  font-weight: normal;
+}
+.ing-item > view:nth-child(1),.finish-item > view:nth-child(1) {
+  font-weight: 600;
+}
+.ing-item > view.order-title,.finish-item > view.order-title{
+  overflow: hidden;
+}
+.ing-item > view.order-title > text:nth-child(2), .finish-item > view.order-title > text:nth-child(2){
+  float: right;
+}
+/* ing-list */

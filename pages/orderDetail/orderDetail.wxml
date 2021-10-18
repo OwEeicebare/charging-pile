@@ -1,0 +1,78 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class="page">
+  <view class="common-padding common-font">
+    <!-- order -->
+    <view class="order-detail">
+      <!-- ing-order-progress -->
+      <view class="ing-order-progress common-border" wx:if="{{!detail.state}}">
+        <view style="width: {{detail.percent}}%" class="green really-progress">充满还需要：{{detail.time}}</view>
+        <text class="progress-number">{{detail.percent}}%</text>
+      </view>
+      <!-- finish-order-progress -->
+      <view class="finish-order-progress common-border" wx:else>
+        <view class="green really-progress">充电已完成</view>
+      </view>
+      <view class="order-information common-border common-radius common-font">
+        <view class="order-title">万科星火小石头充电站</view>
+        <view class="common-margin">
+          <text>电桩编号</text>
+          <text>160198496169480</text>
+        </view>
+        <view class="common-margin">
+          <text>订单编号</text>
+          <text>201909246169480</text>
+        </view>
+        <view class="common-margin">
+          <text>终端类型</text>
+          <text>交流电桩</text>
+        </view>
+        <view class="common-margin">
+          <text>SOC</text>
+          <text>98%</text>
+        </view>
+        <view wx:if="{{!detail.state}}" class="order-title ing-detail">
+          <view class="common-margin">
+            <text>充电电流(A)</text>
+            <text>12</text>
+          </view>
+          <view class="common-margin">
+            <text>充电电压(A)</text>
+            <text>220</text>
+          </view>
+          <view class="common-margin">
+            <text>充满金额(元)</text>
+            <text>38.00</text>
+          </view>
+          <view class="common-margin">
+            <text>已充金额(元)</text>
+            <text>24.00</text>
+          </view>
+        </view>
+        <view wx:else class="order-title finish-detail">
+          <view class="common-margin">
+            <text>充电时长</text>
+            <text>01:32:44</text>
+          </view>
+          <view class="common-margin">
+            <text>充电金额(元)</text>
+            <text>38.00</text>
+          </view>
+          <!-- <view class="common-margin">
+            <text>占桩费(元)</text>
+            <text>38.00</text>
+          </view> -->
+          <view class="common-margin">
+            <text>优惠金额(元)</text>
+            <text>38.00</text>
+          </view>
+          <view class="common-margin">
+            <text>实付金额(元)</text>
+            <text>38.00</text>
+          </view>
+        </view>
+      </view>
+      <view class="common-border common-font green common-radius finish-ele" wx:if="{{!detail.state}}" bindtap="goOnCharge">继续充电</view>
+      <view class="common-border common-font green common-radius finish-ele" wx:if="{{!detail.state}}">结束充电</view>
+    </view>
+  </view>
+</view>

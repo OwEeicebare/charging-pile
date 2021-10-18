@@ -1,0 +1,11 @@
+<view class="page common-font common-padding">
+  <view class="page__hd">
+    <image src="../../images/home/img_logo.svg" class="login-image"></image>
+    <view>高达新能源</view>
+  </view>
+  <view class="tips common-middle-font">您暂未授权高达新能源小程序获取您的信息，将无法正常使用小程序的功能。如需正常使用，请点击“授权”按钮，打开邮箱，昵称等信息的授权。</view>
+  <view class="page__bd">
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"  class="weui-btn author-btn">绑定手机号</button>
+    <button class="else-btn" bindtap="cancel">取消</button>
+  </view>
+</view>

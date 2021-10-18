@@ -1,0 +1,16 @@
+var filters = {
+  toFix: function (value, digit) {
+    // console.log(value);
+    return Number(value).toFixed(digit)
+  },
+  splitLastStr: function (value) {
+    // console.log(value.lastIndexOf(':'));
+    return value.slice(0, value.lastIndexOf(':'));
+  }
+}
+
+
+module.exports = {
+  toFix: filters.toFix,
+  splitLastStr: filters.splitLastStr
+}

@@ -1,0 +1,24 @@
+<!--pages/coupon/coupon.wxml-->
+<import src="../../template/state/state.wxml" />
+
+<view class="page common-margin">
+  <view class="common-padding common-font">
+    <view class="avaliable-coupon-list" wx:if="{{list.length}}">
+      <view class="coupon-item common-border common-large-radius red" wx:for="{{list}}" wx:key="{{list.id}}">
+        <view class="coupon-type">
+          <text>{{item.couponsTypeName}}</text>
+          <text>{{item.useCondition ? '满' + item.useCondition + '减' : '无门槛减'}}{{item.subFullDynamice}}</text>
+          <view class="default-bg common-border"></view>
+          <view class="default-bg common-border"></view>
+        </view>
+        <view class="coupon-infomation common-middle-font">
+          <view>到期时间：{{item.endTime}}</view>
+          <view>使用说明：{{item.useCondition ? '订单金额达到满减额度自动抵扣' : '订单金额大于减免金额自动抵扣'}}</view>
+        </view>
+      </view>
+    </view>
+
+    <template is="state" data="{{...noCoupon}}" wx:else></template>
+    <navigator hover-class="none" url="../invalid/invalid" class="common-middle-font invalid-entrance">查看失效优惠券</navigator>
+  </view>
+</view>

@@ -1,0 +1,76 @@
+/* pages/invalid/invalid.wxss */
+@import "../../template/state/state.wxss";
+
+.coupon-item {
+  margin-bottom: 40rpx;
+  border: 4rpx solid #d9d9d9;
+}
+
+.coupon-type {
+  border-bottom: 4rpx dashed #d9d9d9;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.coupon-type, .coupon-infomation {
+  padding: 20rpx 40rpx;
+}
+
+.coupon-infomation {
+  font-weight: normal;
+  position: relative;
+}
+
+.coupon-infomation > view:nth-child(2) {
+  margin-top: 10rpx;
+  width: 80%;
+}
+
+.coupon-type > view {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10rpx;
+  border: 4rpx solid #d9d9d9;
+}
+
+.coupon-type > view:nth-child(3) {
+  left: -10rpx;
+}
+
+.coupon-type > view:nth-child(4) {
+  right: -10rpx;
+}
+
+.coupon-type::before, .coupon-type::after {
+  content: '';
+  width: 10rpx;
+  height: 20rpx;
+  background-color: #fff;
+  position: absolute;
+  bottom: -10rpx;
+  z-index: 2;
+}
+
+.coupon-type::before {
+  left: -12rpx;
+}
+
+.coupon-type::after {
+  right: -12rpx;
+}
+.invalid-type{
+  width: 130rpx;
+  height: 50rpx;
+  transform-origin: 100% 100%;
+  transform: rotate(30deg);
+  text-align: center;
+  border: 4rpx solid #b8b8b8;
+  line-height: 42rpx;
+  box-sizing: border-box;
+  position: absolute;
+  top: 74rpx;
+  right: 50rpx;
+}

@@ -1,0 +1,42 @@
+@import "../../template/state/state.wxss";
+
+/* pages/withdraw/withdraw.wxss */
+
+.withdraw-wrap {
+  overflow: hidden;
+  height: auto;
+}
+
+.withdraw-remainder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.withdraw-remainder > view {
+  width: 160rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 48rpx;
+}
+
+.customize-money {
+  display: flex;
+  height: 100rpx;
+  padding-left: 40rpx;
+  border-bottom: 4rpx solid #000;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.customize-input {
+  flex: auto;
+  margin-left: 10rpx;
+}
+
+.ensure-recharge {
+  text-align: center;
+  height: 80rpx;
+  line-height: 78rpx;
+}

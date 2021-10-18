@@ -1,0 +1,18 @@
+<import src="../../template/state/state.wxml" />
+<!--pages/capital/capital.wxml-->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+
+<view class="page">
+  <view class="common-padding common-font">
+    <view class="capital-list" wx:if="{{list.length}}">
+      <view wx:for="{{list}}" wx:key="item.id" class="capital-item">
+        <view class="capital-type">
+          <text>充电消费</text>
+          <text class="{{item.money > 0 ? 'actived' : ''}}">{{item.money > 0 ? '+' : ''}}{{filters.toFix(item.money, 2)}}元</text>
+        </view>
+        <view class="common-middle-font common-margin assist-color capital-time">2019.09.23 10:39:12</view>
+      </view>
+    </view>
+    <template is="state" data="{{...noCoupon}}" wx:else></template>
+  </view>
+</view>

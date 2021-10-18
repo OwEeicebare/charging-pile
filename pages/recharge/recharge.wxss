@@ -1,0 +1,42 @@
+@import "../../template/popup/popup.wxss";
+@import "../../template/state/state.wxss";
+
+/* pages/recharge/recharge.wxss */
+
+.recharge-wrap {
+  overflow: hidden;
+}
+
+.amount {
+  display: flex;
+  margin: 40rpx 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.amount > view {
+  width: 210rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 98rpx;
+}
+
+.customize-money {
+  display: flex;
+  height: 100rpx;
+  padding-left: 40rpx;
+  border-bottom: 4rpx solid #000;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.customize-input {
+  flex: auto;
+  margin-left: 10rpx;
+}
+
+.ensure-recharge {
+  text-align: center;
+  height: 80rpx;
+  line-height: 78rpx;
+}

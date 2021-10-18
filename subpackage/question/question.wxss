@@ -1,0 +1,55 @@
+@import "../../template/state/state.wxss";
+
+/* pages/question/question.wxss */
+
+.page {
+  height: 100vh;
+  position: relative;
+}
+.page-grey{
+  background-color: rgba(230, 230, 230, 0.2);
+}
+.page > view{
+  padding-top: 20rpx;
+  background-color: #fff;
+}
+
+.question-type {
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-type > image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.question-type > text {
+  width: calc(100% - 70rpx);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.qustion-answer {
+  display: -webkit-box;
+  font-weight: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  overflow: hidden;
+}
+
+.question-box {
+  height: 40rpx;
+  position: relative;
+}
+
+.question-item {
+  padding: 0 40rpx;
+}
+
+.question-list {
+  background-color: #fff;
+}

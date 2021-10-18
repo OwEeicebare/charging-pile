@@ -1,0 +1,19 @@
+<!--pages/invalid/invalid.wxml-->
+<view class="page common-margin">
+  <view class="common-padding common-font assist-color">
+    <view class="avaliable-coupon-list">
+      <view class="coupon-item grey common-large-radius" wx:for="{{list}}" wx:key="{{list.id}}">
+        <view class="coupon-type">
+          <text>满减券</text>
+          <text>满100减10</text>
+          <view class="default-bg"></view>
+          <view class="default-bg"></view>
+        </view>
+        <view class="coupon-infomation common-middle-font">
+          <view>到期时间：2019.09.25</view>
+          <view>使用说明：订单满100可抵扣10元</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

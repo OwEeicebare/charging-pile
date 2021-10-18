@@ -1,0 +1,23 @@
+<!--pages/coupon/coupon.wxml-->
+<import src="../../template/state/state.wxml" />
+
+<view class="page common-margin">
+  <view class="common-padding common-font" wx:if="{{list.length}}">
+    <view class="avaliable-coupon-list">
+      <view class="coupon-item common-border common-large-radius red" wx:for="{{list}}" wx:key="{{list.id}}">
+        <view class="coupon-type">
+          <text>满减券</text>
+          <text>满100减10</text>
+          <view class="default-bg common-border"></view>
+          <view class="default-bg common-border"></view>
+        </view>
+        <view class="coupon-infomation common-middle-font">
+          <view>到期时间：2019.09.25</view>
+          <view>使用说明：订单满100可抵扣10元</view>
+        </view>
+      </view>
+    </view>
+    <navigator hover-class="none" url="../invalid/invalid" class="common-middle-font invalid-entrance">查看失效优惠券</navigator>
+  </view>
+  <template is="state" data="{{...noCoupon}}" wx:else></template>
+</view>

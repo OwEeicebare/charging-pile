@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>icon_close copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="40" height="40"></rect>
+    </defs>
+    <g id="Page-1-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_close-copy">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Rectangle"></g>
+            <path d="M20,4 C21.1045695,4 22,4.8954305 22,6 L21.999,17.999 L34,18 C35.1045695,18 36,18.8954305 36,20 C36,21.1045695 35.1045695,22 34,22 L21.999,21.999 L22,34 C22,35.1045695 21.1045695,36 20,36 C18.8954305,36 18,35.1045695 18,34 L17.999,21.999 L6,22 C4.8954305,22 4,21.1045695 4,20 C4,18.8954305 4.8954305,18 6,18 L17.999,17.999 L18,6 C18,4.8954305 18.8954305,4 20,4 Z" id="Combined-Shape" fill="#000000" mask="url(#mask-2)" transform="translate(20.000000, 20.000000) rotate(45.000000) translate(-20.000000, -20.000000) "></path>
+        </g>
+    </g>
+</svg>

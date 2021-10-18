@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>icon_money</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon_money">
+            <rect id="Rectangle" x="0" y="0" width="64" height="64"></rect>
+            <g id="Group-5" transform="translate(2.000000, 3.000000)">
+                <rect id="Rectangle" stroke="#000000" stroke-width="4" fill="#F9DA0D" transform="translate(29.464023, 24.000000) rotate(-30.000000) translate(-29.464023, -24.000000) " x="10.464023" y="8" width="38" height="32" rx="3"></rect>
+                <rect id="Rectangle" stroke="#000000" stroke-width="4" fill="#F56C6C" transform="translate(35.000000, 27.660916) rotate(-15.000000) translate(-35.000000, -27.660916) " x="15" y="10.6609157" width="40" height="34" rx="3"></rect>
+                <rect id="Rectangle" stroke="#000000" stroke-width="4" fill="#3AAAFF" x="6" y="14.6609157" width="50" height="42" rx="3"></rect>
+                <path d="M8,48.6609157 L54,48.6609157 L54,53.6609157 C54,54.2132004 53.5522847,54.6609157 53,54.6609157 L9,54.6609157 C8.44771525,54.6609157 8,54.2132004 8,53.6609157 L8,48.6609157 L8,48.6609157 Z" id="Rectangle" fill="#0C7CFF"></path>
+                <g id="Group-4" transform="translate(0.000000, 36.660916)">
+                    <circle id="Oval" stroke="#000000" stroke-width="4" fill="#F5A623" cx="10" cy="10" r="10"></circle>
+                    <polygon id="￥" fill="#000000" fill-rule="nonzero" points="12.724 10.32 12.724 11.34 10.936 11.34 10.936 12.06 12.724 12.06 12.724 13.092 10.936 13.092 10.936 15 8.812 15 8.812 13.092 7.036 13.092 7.036 12.06 8.812 12.06 8.812 11.34 7.036 11.34 7.036 10.32 8.344 10.32 6.424 6.672 8.812 6.672 9.88 9.324 9.952 9.324 11.116 6.672 13.456 6.672 11.44 10.32"></polygon>
+                </g>
+                <path d="M51,27.6609157 L58,27.6609157 C59.1045695,27.6609157 60,28.5563462 60,29.6609157 L60,39.6609157 C60,40.7654852 59.1045695,41.6609157 58,41.6609157 L51,41.6609157 C47.1340068,41.6609157 44,38.5269089 44,34.6609157 C44,30.7949224 47.1340068,27.6609157 51,27.6609157 Z" id="Rectangle" stroke="#000000" stroke-width="4" fill="#0C7CFF"></path>
+                <circle id="Oval" fill="#000000" cx="51" cy="34.6609157" r="2"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

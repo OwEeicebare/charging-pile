@@ -1,0 +1,46 @@
+/* pages/handInput/handInput.wxss */
+
+.hand-input {
+  padding: 40rpx 0;
+}
+
+.hand-input-inner {
+  text-align: center;
+  width: 420rpx;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.ele-input {
+  border-bottom: 4rpx solid #000;
+  margin-top: 40rpx;
+  padding-bottom: 10rpx;
+  position: relative;
+}
+.ele-input > input {
+  width: 80%;
+  padding-left: 10%;
+}
+
+.ensure-btn {
+  height: 80rpx;
+  line-height: 76rpx;
+  margin-top: 40rpx;
+}
+
+.clear {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  right: calc(10% - 100rpx);
+  bottom: 0;
+  padding-top: 55rpx;
+  display: flex;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.clear-img {
+  width: 40rpx;
+  height: 40rpx;
+}

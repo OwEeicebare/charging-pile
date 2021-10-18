@@ -1,0 +1,50 @@
+<!--pages/orders/orders.wxml-->
+<import src="../../template/state/state.wxml" />
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+
+<view class="page">
+  <view class="orders common-font">
+    <!-- order-type -->
+    <view class="order-type common-border common-mini-radius">
+      <view class="{{activeType === 'ing' ? 'green common-mini-radius actived' : ''}}" bindtap="switchType" data-type="ing">进行中</view>
+      <view class="{{activeType === 'finish' ? 'green common-mini-radius actived' : ''}}" bindtap="switchType" data-type="finish">已完成</view>
+    </view>
+    <!-- order-list -->
+    <view class="orders-wrap">
+      <!-- <view class="orders-innner" animation="{{animationData}}"> -->
+        <!-- ing-list -->
+        <view hidden="{{activeType !== 'ing'}}">
+          <view class="ing-list common-padding" wx:if="{{ingList.length}}">
+            <view class="ing-item common-border common-radius common-margin" wx:for="{{ingList}}" wx:key="{{item.id}}" bindtap="toDetail" data-detailId="{{item.orderNumber}}" data-state="{{item.eleState}}">
+              <view class="order-title">
+                <text>{{item.stationName}}</text>
+                <text>{{item.eleState ? item.soc + '%' : '等待中'}}</text>
+              </view>
+              <view class="common-margin">电桩编号：{{item.eleNumber}}</view>
+              <view class="common-margin">订单编号：{{item.orderNumber}}</view>
+              <view class="common-margin">充电时间：{{item.startTime}}</view>
+            </view>
+          </view>
+          <template is="state" data="{{...noCoupon}}" wx:else></template>
+        </view>
+
+        <!-- finish-list -->
+        <view hidden="{{activeType !== 'finish'}}">
+          <view class="finish-list  common-padding" wx:if="{{finishList.length}}">
+            <view class="finish-item common-border common-radius common-margin" wx:for="{{finishList}}" wx:key="{{item.id}}" bindtap="toDetail" data-detailId="{{item.orderNumber}}">
+              <view class="order-title">
+                <text>{{item.eleName}}</text>
+                <text>{{item.praDeuctMoney}}元</text>
+              </view>
+              <view class="common-margin">电桩编号：{{item.eleNumber}}</view>
+              <view class="common-margin">订单编号：{{item.orderNumber}}</view>
+              <view class="common-margin">充电时间：{{item.startTime}}</view>
+              <view class="common-margin">充电电量：{{item.eleQuantity}}</view>
+            </view>
+          </view>
+          <template is="state" data="{{...noCoupon}}" wx:else></template>
+        </view>
+      <!-- </view> -->
+    </view>
+  </view>
+</view>

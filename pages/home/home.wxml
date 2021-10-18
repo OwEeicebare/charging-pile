@@ -1,0 +1,133 @@
+<!--pages/home/home.wxml-->
+<!-- 导入模板 -->
+<import src="../../template/eleInfo/eleInfo.wxml" />
+<import src="../../template/popup/popup.wxml" />
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+
+<view class="page">
+  <view class="common-padding {{listShow || listStationShow  ? 'limit-scroll' : ''}}">
+    <!-- banner -->
+    <view class="ele-banner common-border common-radius">
+      <view class="ele-banner-inner">
+        <!-- <image src="../../images/home/cover.jpg" mode="aspectFill"></image> -->
+        <swiper indicator-dots="{{false}}" autoplay="{{true}}" interval="5000" duration="1000" circular="{{true}}" class="common-mini-radius">
+          <block wx:for="{{banner}}">
+            <swiper-item>
+              <image src="{{item}}" lazy-load mode='aspectFill' class="slide-image" />
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class="ele-info common-font-mini">
+        <view class="common-mini-radius common-border default-bg">
+          <image src="../../images/home/icon_time.svg"></image>
+          <text>{{stationInfo.exploitStartTime}}-{{stationInfo.exploitEndTime}}</text>
+        </view>
+        <view></view>
+        <view class="common-mini-radius common-border default-bg" bindtap="toMap">
+          <image src="../../images/home/icon_address.svg"></image>
+          <text>{{stationInfo.stationAddress}}</text>
+        </view>
+
+      </view>
+    </view>
+    <!-- ele-list -->
+    <view class="ele-list common-margin">
+      <view class="ele-list-inner common-radius common-border default-bg  common-font">
+        <view bindtap="openStationList" class="current-station">
+          <image src="../../images/home/icon_switch_site.svg"></image>
+          <text>{{stationInfo.stationName}}</text>
+        </view>
+        <view class="list-type common-margin" bindtap="openList" data-type="straight">
+          <view>直流</view>
+          <text>可用：{{directBase.dcUsable}}/{{directBase.dcCount}}</text>
+          <view class="common-border">
+            <image src="../../images/home/icon_right_arrow.svg"></image>
+          </view>
+        </view>
+        <view class="list-type common-margin" bindtap="openList" data-type="alternating">
+          <view>交流</view>
+          <text>可用：{{exchangeBase.acUsable}}/{{exchangeBase.acCount}}</text>
+          <view class="common-border">
+            <image src="../../images/home/icon_right_arrow.svg"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- ele-manual -->
+    <view class="ele-manual common-margin" bindtap="openRules">
+      <view class="ele-manual-inner common-radius common-border  common-font">
+        <view>当前时段费率</view>
+        <view>
+          <text>{{filters.toFix(currentEleFee, 4)}}元/度</text>
+          <view class="rules common-border">
+            <image src="../../images/home/icon_right_arrow.svg"></image>
+          </view>
+        </view>
+        <!-- <text class="rules common-font-mini common-mini-border common-margin" bindtap="openRules">计费规则</text> -->
+      </view>
+      <!-- <view class="ele-manual-inner common-radius common-border  common-font">
+        <view>占桩费</view>
+        <view class="common-font-mini common-margin">免费停车时长为：{{stationInfo.gratisTime}}小时,超出部分按每10分钟{{currentEleFee.EleServerCost}}元收费</view>
+      </view> -->
+    </view>
+    <!-- ing-order -->
+    <view class="ing-order common-middle-font" wx:if="{{ingList.length}}">
+      <navigator url="../../subpackage/orderDetail/orderDetail?detail_id={{item.orderNumber}}&type=ing" wx:for="{{ingList}}" wx:key="{{item.id}}" class="common-border common-margin ing-item common-radius" hover-class="none">
+        <view style="width: {{item.soc}}%" class="green really-progress"></view>
+        <view>
+          <text>电桩编号：{{item.eleNumber}}</text>
+          <text class="progress-number">{{item.soc}}%</text>
+        </view>
+      </navigator>
+    </view>
+    <!-- ele-operate -->
+    <view class="ele-operate common-margin">
+      <view class="ele-operate-inner common-radius common-border green  common-font">
+        <view class="ele-scan common-border common-radius">
+          <view class="common-font-mini ele-scan-text common-mini-radius" bindtap="scan">扫码充电</view>
+          <view class="transparen-view green"></view>
+          <view class="transparen-view green"></view>
+          <view class="transparen-view green"></view>
+          <view class="transparen-view green"></view>
+        </view>
+        <view bindtap="handInput">手动输入电桩号</view>
+      </view>
+    </view>
+    <!-- ele-copyright -->
+    <view class="ele-copyright common-font-mini assist-color">
+      <view>高达新能源©</view>
+      <!-- <view>版权信息版权信息</view> -->
+    </view>
+  </view>
+  <!-- 电桩列表 -->
+  <view bindtap="closeList" wx:if="{{listShow}}">
+    <template is="ele-information" data="{{...eleList}}" wx:if="{{showType === 'sList' && eleList.list.length}}"></template>
+    <template is="ele-information" data="{{...alEleList}}" wx:if="{{showType === 'aList' && alEleList.list.length}}"></template>
+    <template is="rules" data="{{...rules}}" wx:if="{{showType === 'rules'}}"></template>
+  </view>
+  <!-- 优惠券 -->
+  <view class="coupons-list" bindtap="closePopUp" wx:if="{{listShow && showType === 'popup' && coupon.length}}">
+    <view class="mask"></view>
+    <block wx:for="{{coupon}}" wx:key="{{item.id}}">
+      <template is="popup" data="{{...item}}"></template>
+    </block>
+  </view>
+  <!-- 充电站列表 -->
+  <view hidden="{{!listStationShow}}" class="station-list-show common-font">
+    <view class="mask"></view>
+    <view>
+      <view class="station-list-name">
+        <text class="green common-border common-mini-radius">站点列表</text>
+        <view class="close" bindtap="closeStation">
+          <image src="../../images/home/icon_close.svg"></image>
+        </view>
+      </view>
+      <view class="station-list">
+        <view>
+          <view class="station-item common-mini-radius common-border" wx:for="{{stationList}}" data-id="{{item.id}}" bindtap="stationChange">{{item.stationName}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,81 @@
+.page-popup {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+}
+
+.popup-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.popup {
+  position: absolute;
+  padding: 40rpx;
+  width: 560rpx;
+  margin: 0 auto;
+  text-align: center;
+  left: calc((100% - 560rpx)/2);
+}
+
+.coupon-title {
+  margin-bottom: 40rpx;
+  position: relative;
+}
+
+.coupon-title > text {
+  font-size: 36rpx;
+}
+
+.coupon-title > view {
+  position: absolute;
+  right: 0;
+  border-radius: 50%;
+  width: 50rpx;
+  height: 50rpx;
+  top: 0;
+}
+
+.coupon-title > view > image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 6rpx;
+}
+
+.popup-item {
+  position: relative;
+  width: 380rpx;
+  height: 130rpx;
+  margin: 20rpx auto 0;
+}
+
+.popup-item > image {
+  width: 380rpx;
+  height: 130rpx;
+}
+
+.coupon-content {
+  position: absolute;
+  left: 40rpx;
+  top: 20rpx;
+  text-align: left;
+  color: #fff;
+}
+
+.coupon-content > view:nth-child(2) {
+  font-weight: normal;
+}
+
+.receive-btn {
+  width: 360rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 40rpx;
+}

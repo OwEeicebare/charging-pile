@@ -1,0 +1,101 @@
+/* pages/battery/battery.wxss */
+@import "../../template/eleInfo/eleInfo.wxss";
+
+.battery-inner, .battery-btn-inner {
+  width: 100%;
+  overflow: hidden;
+  padding: 40rpx;
+}
+
+.battery-btn-inner {
+  height: 80rpx;
+  padding: unset;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.battery-inner > view:nth-child(2), .battery-inner > view:nth-child(3) {
+  font-weight: normal;
+}
+
+.pay-btn {
+  margin-top: 40rpx;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recharge {
+  width: 100rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 46rpx;
+  margin: 0;
+  padding: 0;
+}
+
+.rules {
+  border-radius: 50%;
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+}
+
+.rules > image {
+  width: 30rpx;
+  height: 30rpx;
+  margin: 6rpx 0;
+}
+
+.current-account{
+  display: flex;
+  justify-content: space-between;
+  font-size: 32rpx;
+  padding: 20px 0;
+  border-bottom: 2px solid #000;
+  margin-bottom: 40rpx;
+}
+.pay-title{
+  font-size: 32rpx;
+}
+.pays{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.pays > view{
+  margin-left: 20rpx;
+  width: calc((100% - 40rpx)/3);
+  font-size: 36rpx;
+  /* font-weight: bold; */
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 8rpx;
+}
+.pays > view:nth-child(3n-2){
+  margin-left: 0;
+}
+.customize-money{
+  margin-top: 40rpx;
+  height: 100rpx;
+  display: flex;
+  border-bottom: 4rpx solid #000;
+  align-items: center;
+  padding-left: 40rpx;
+}
+.customize-money{
+  font-size: 32rpx;
+}
+.customize-money > text{
+  margin-right: 10rpx;
+}
+.customize-placeholder{
+  color: #b8b8b8;
+}
+.green-bg{
+  background-color: #4BEB99;
+}

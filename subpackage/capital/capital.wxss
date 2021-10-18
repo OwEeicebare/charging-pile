@@ -1,0 +1,19 @@
+@import "../../template/state/state.wxss";
+/* pages/capital/capital.wxss */
+.capital-item{
+  padding: 40rpx 0;
+  border-bottom: 4rpx solid #000;
+}
+.capital-type{
+  display: flex;
+  justify-content: space-between;
+}
+.capital-type > text.actived{
+  color: rgb(75, 235, 153);
+}
+.capital-time{
+  font-weight: normal;
+}
+.capital-list > .capital-item:nth-last-child(1){
+  border: none;
+}

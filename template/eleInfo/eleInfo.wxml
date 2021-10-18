@@ -1,0 +1,69 @@
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<!-- 电桩列表 -->
+<template name="ele-information">
+  <view class="page-information">
+    <view class="mask"></view>
+    <view class="electronic-list-wrap common-font">
+      <!-- list-type-title -->
+      <view class="title-wrap">
+        <view class="green common-border common-mini-radius list-type-title">{{type}}列表</view>
+        <view class="common-border close-list" data-operate="close">
+          <image src="../../images/home/icon_close.svg" data-operate="close"></image>
+        </view>
+      </view>
+      <!-- list -->
+      <view class="ele-list-arr common-border common-radius">
+        <view class="ele-th">
+          <view>桩号</view>
+          <view>电桩编号</view>
+          <view>状态</view>
+        </view>
+        <view class="ele-tbody-wrap">
+          <view class="ele-tbody">
+            <view class="ele-td" wx:for="{{list}}" wx:key="{{item.id}}">
+              <view>{{item.id}}</view>
+              <view>{{item.eleNumber}}</view>
+              <view class="{{item.state === 2 ? 'free' : ''}}">{{item.state === 0 ? '0%' : item.state === 1 ? '0%' : item.state === 2 ? '空闲' :  item.state === 3 ? item.soc + '%' : '0%'}}</view>
+              <!-- "state": 0, //状态code(0离线，1故障，2待机，3工作） -->
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 计费规则 -->
+<template name="rules">
+  <view class="page-information">
+    <view class="mask"></view>
+    <view class="electronic-list-wrap common-font">
+      <!-- list-type-title -->
+      <view class="title-wrap">
+        <view class="green common-border common-mini-radius list-type-title">计费规则</view>
+        <view class="common-border close-list" data-operate="close">
+          <image src="../../images/home/icon_close.svg" data-operate="close"></image>        
+        </view>
+      </view>
+      <!-- list -->
+      <view class="rules-arr common-border common-radius">
+        <view class="rules-th">
+          <view>时段</view>
+          <view>收费标准</view>
+        </view>
+        <view class="rules-tbody-wrap">
+          <view class="rules-tbody">
+            <view class="rules-td" wx:for="{{list}}" wx:key="{{item.id}}">
+              <view>{{filters.splitLastStr(item.startTime)}}-{{filters.splitLastStr(item.endTime)}}</view>
+              <view>
+                <view>{{filters.toFix(item.total, 4)}}元/度</view>
+                <view class="common-middle-font simple">电费：{{filters.toFix(item.eleCost, 4)}}元/度</view>
+                <view class="common-middle-font simple">服务费：{{filters.toFix(item.eleServerCost, 4)}}元/度</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

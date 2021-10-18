@@ -1,0 +1,10 @@
+.state > view{
+  margin: 100rpx auto 0; 
+  text-align: center;
+  color: #b8b8b8;
+}
+.state > view > image{
+  width: 500rpx;
+  height: 300rpx;
+  margin-bottom: 40rpx;
+}

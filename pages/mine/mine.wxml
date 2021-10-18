@@ -1,0 +1,58 @@
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<!--pages/mine/mine.wxml-->
+<view class="page">
+  <view class="common-padding common-font">
+    <!-- user-info -->
+    <view class="common-border common-radius">
+      <!-- my-info -->
+      <view class="green my-info">
+        <view class="wx-avatar default-bg">
+          <image src="{{userInfo.avatarUrl}}" mode="aspectFit"></image>
+        </view>
+        <text>{{userInfo.nickName}}</text>
+      </view>
+      <!-- wallet-wrap -->
+      <view class="wallet-wrap">
+        <view class="wallet" bindtap="toWallet">
+          <image src="../../images/home/icon_money.svg"></image>
+          <view>
+            <view>
+              <text>钱包</text>
+            </view>
+            <view>
+              <text>￥{{filters.toFix(packMoney, 2)}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="coupon">
+          <image src="../../images/home/icon_money_freeze.svg"></image>
+          <view>
+            <view>
+              <text>冻结金额</text>
+            </view>
+            <view>
+              <text>￥{{filters.toFix(fixMoney, 2)}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- normal-question -->
+    <div class="normal-question common-border common-radius common-margin" bindtap="toCoupon">
+      <text>优惠券</text>
+      <view class="coupon-link">
+        <text wx:if="{{couponLength}}">{{couponLength}}张</text>
+        <image src="../../images/home/icon_right_arrow.svg"></image>
+      </view>
+    </div>
+    <navigator hover-class="none" url="../../subpackage/question/question" class="normal-question common-border common-radius common-margin">
+      <text>常见问题</text>
+      <image src="../../images/home/icon_right_arrow.svg"></image>
+    </navigator>
+    <!-- contact -->
+    <view class="contact common-border common-radius common-margin" bindtap="makeCall">
+      <text>客服热线</text>
+      <text>0755-89958398</text>
+    </view>
+  </view>
+</view>

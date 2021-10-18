@@ -1,0 +1,66 @@
+/* pages/orderDetail/orderDetail.wxss */
+
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.ing-order-progress,.finish-order-progress{
+  height: 60rpx;
+  margin: 20rpx 40rpx;
+  line-height: 58rpx;
+  border-radius: 30rpx;
+  position: relative;
+  overflow: hidden;
+}
+.ing-order-progress > view:nth-child(2) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.ing-order-progress > view:nth-child(2) > text:nth-child(1) {
+  padding-left: 20rpx;
+}
+.really-progress{
+  height: 100%;
+  border-radius: 30rpx;
+  width: 0;
+}
+.finish-order-progress{
+  text-align: center;
+}
+.finish-order-progress > .really-progress{
+  width: 100%;
+}
+.progress-number{
+  padding-right: 20rpx;
+}
+.order-information{
+  padding: 40rpx;
+  font-weight: normal;
+}
+.order-title{
+  font-weight: 600;
+}
+.order-information > view:not(.order-title), .finish-detail > view,.ing-detail > view{
+  font-weight: normal;
+  display: flex;
+  justify-content: space-between;
+}
+.finish-ele{
+  height: 80rpx;
+  line-height: 78rpx;
+  text-align: center;
+  margin-top: 40rpx;
+}
+.real-pay-money{
+  padding-top: 20rpx;
+  border-top: 4rpx solid #000;
+}

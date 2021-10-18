@@ -1,0 +1,82 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class="page">
+  <view class="common-padding common-font">
+    <!-- order -->
+    <view class="order-detail">
+      <!-- ing-order-progress -->
+      <view class="ing-order-progress common-border" wx:if="{{type === 'ing'}}">
+        <view style="width: {{detailObj.percent ? detailObj.percent : 0}}%" class="green really-progress"></view>
+        <view>
+          <text>充满还需要：{{detailObj.residueTime ? detailObj.residueTime : 0}}分钟</text>
+          <text class="progress-number">{{detailObj.percent ? detailObj.percent : 0}}%</text>
+        </view>
+      </view>
+      <!-- finish-order-progress -->
+      <view class="finish-order-progress common-border" wx:else>
+        <view class="green really-progress">充电已完成</view>
+      </view>
+      <view class="order-information common-border common-radius common-font">
+        <view class="order-title">{{detailObj.eleName ? detailObj.eleName : ''}}</view>
+        <view class="common-margin">
+          <text>电桩编号</text>
+          <text>{{detailObj.eleNumber ? detailObj.eleNumber : ''}}</text>
+        </view>
+        <view class="common-margin" wx:if="{{type !== 'ing'}}">
+          <text>订单编号</text>
+          <text>{{detailObj.orderNumber ? detailObj.orderNumber : ''}}</text>
+        </view>
+        <view class="common-margin" wx:if="{{type === 'ing'}}">
+          <text>电桩类型</text>
+          <text>{{detailObj.eleTypeName ? detailObj.eleTypeName : ''}}</text>
+        </view>
+        <view class="common-margin" wx:else>
+          <text>电桩类型</text>
+          <text>{{detailObj.chargeTypeName ? detailObj.chargeTypeName : ''}}</text>
+        </view>
+        <view class="common-margin">
+          <text>SOC</text>
+          <text>{{detailObj.soc ? detailObj.soc : 0}}%</text>
+        </view>
+        <view wx:if="{{type === 'ing'}}" class="order-title ing-detail">
+          <view class="common-margin">
+            <text>充电电流(A)</text>
+            <text>{{detailObj.electricity ? detailObj.electricity : 0}}</text>
+          </view>
+          <view class="common-margin">
+            <text>充电电压(V)</text>
+            <text>{{detailObj.eleVoltage ? detailObj.eleVoltage : 0}}</text>
+          </view>
+          <view class="common-margin">
+            <text>已充金额(元)</text>
+            <text>{{detailObj.rechMoney ? detailObj.rechMoney : 0.00}}</text>
+          </view>
+        </view>
+        <view wx:else class="order-title finish-detail">
+          <view class="common-margin">
+            <text>充电电量(kw·h)</text>
+            <text>{{detailObj.eleQuantity ? detailObj.eleQuantity : 0}}</text>
+          </view>
+          <view class="common-margin">
+            <text>已充金额(元)</text>
+            <text>{{detailObj.praDeuctMoney ? detailObj.praDeuctMoney : 0.00}}</text>
+          </view>
+          <!-- <view class="common-margin">
+            <text>占桩费(元)</text>
+            <text>38.00</text>
+          </view> -->
+          <view class="common-margin">
+            <text>优惠金额(元)</text>
+            <text>{{detailObj.couponsMoney ? detailObj.couponsMoney : 0.00}}</text>
+          </view>
+          <view class="common-margin real-pay-money">
+            <text>实付金额(元)</text>
+            <text>{{detailObj.realityDeductMoney ? detailObj.realityDeductMoney : 0.00}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="common-border common-font green common-radius finish-ele" wx:if="{{type === 'ing' && detailObj.orderState == 0}}" bindtap="goOnCharge">继续充电</view> -->
+      <view class="common-border common-font green common-radius finish-ele" wx:if="{{type === 'ing'}}" bindtap="enquireOver">结束充电</view>
+    </view>
+  </view>
+  <view class="mask" hidden="{{!overMask}}"></view>
+</view>

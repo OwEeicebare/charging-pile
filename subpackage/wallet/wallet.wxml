@@ -1,0 +1,19 @@
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<!--pages/wallet/wallet.wxml-->
+<view class="page">
+  <view class="common-padding common-font">
+    <view class="common-border common-radius green wallet-wrap">
+      <view>
+        <image src="../../images/home/icon_money.svg"></image>
+        <text class="wallet-text">钱包</text>
+        <text>￥{{filters.toFix(packMoney, 2)}}</text>
+        <button class="common-border common-radius default-bg withdraw common-middle-font" bindtap="toWithdraw">提现</button>
+      </view>
+      <button class="common-border common-radius default-bg recharge" bindtap="toRecharge">充值</button>
+    </view>
+    <navigator url="../capital/capital" class="capital-flow common-border common-radius common-margin">
+      <text>资金明细</text>
+      <image src="../../images/home/icon_right_arrow.svg"></image>
+    </navigator>
+  </view>
+</view>

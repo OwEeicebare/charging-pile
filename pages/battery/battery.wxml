@@ -1,0 +1,44 @@
+<!--pages/battery/battery.wxml-->
+<import src="../../template/eleInfo/eleInfo.wxml" />
+
+<view class="page common-margin">
+  <view class="common-padding">
+    <view class="common-font">设备已连接，请确认充电</view>
+    <!-- battery-info -->
+    <view class="common-margin battery-info">
+      <view class="battery-inner common-radius common-border common-font">
+        <view class="">电桩信息</view>
+        <view class="common-margin">电桩编号：{{chargeInfo.eleNumber}}</view>
+        <view class="common-margin flex-between">
+          <text>当前费率：{{chargeInfo.rating}}元/度</text>
+          <view class="common-border rules" bindtap="openRules">
+            <image src="../../images/home/icon_right_arrow.svg"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- current-account -->
+    <view class="current-account">
+      <text>当前余额：{{chargeInfo.balance}}元</text>
+      <button class="recharge common-border default-bg common-mini-radius common-middle-font" bindtap="toRecharge" hover-class="none">充值</button>
+    </view>
+    <view class="pay-money">
+      <view class="pay-title">
+        <text>请选择充电金额：</text>
+      </view>
+      <view class="pays">
+        <view wx:for="{{pays}}" class="common-margin common-border {{item.money == activeMoney ? 'green-bg' : ''}}" bindtap="changeMoney" data-index="{{item.money}}">￥{{item.money}}</view>
+      </view>
+    </view>
+    <view class="customize-money">
+      <text>￥</text>
+      <input placeholder="自定义充电金额" type="digit" placeholder-class="customize-placeholder"></input>
+    </view>
+    <view class="pay-btn">
+      <view class="battery-btn-inner common-mini-radius common-border green common-font" bindtap="immediatelyEle">立即充电</view>
+    </view>
+  </view>
+  <view bindtap="closeList" wx:if="{{listShow}}">
+    <template is="rules" data="{{...rules}}"></template>
+  </view>
+</view>

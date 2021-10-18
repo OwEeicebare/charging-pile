@@ -1,0 +1,10 @@
+<template name="state">
+  <view class="page state common-font">
+    <view>
+      <image src="{{imageSrc}}"></image>
+      <view>
+        <text>{{tips}}</text>
+      </view>
+    </view>
+  </view>
+</template>

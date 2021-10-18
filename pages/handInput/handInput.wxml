@@ -1,0 +1,16 @@
+<!--pages/handInput/handInput.wxml-->
+<view class="page common-padding common-margin">
+  <!-- hand-input  -->
+  <view class="hand-input common-radius common-border">
+    <view class="hand-input-inner common-font">
+      <view class="common-middle-font">请输入电桩号</view>
+      <view class="ele-input">
+        <input type="number" value="{{value}}" bindinput="inputNumber" type="number" focus="{{true}}" maxlength="16"></input>
+        <view class="clear" bindtap="clearNumber" hidden="{{!ableState}}">
+          <image src="../../images/home/icon_input_clean.svg" class="clear-img"></image>
+        </view>
+      </view>
+      <button class="common-mini-radius common-border ensure-btn {{ableState ? 'green' : 'grey'}}" bindtap="ensure" hover-class="none">确认</button>
+    </view>
+  </view>
+</view>

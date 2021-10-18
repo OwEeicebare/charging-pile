@@ -1,0 +1,64 @@
+/* pages/coupon/coupon.wxss */
+@import "../../template/state/state.wxss";
+
+.coupon-item {
+  margin-bottom: 40rpx;
+}
+
+.coupon-type {
+  border-bottom: 4rpx dashed #000;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.coupon-type, .coupon-infomation {
+  padding: 20rpx 40rpx;
+}
+
+.coupon-infomation {
+  font-weight: normal;
+}
+
+.coupon-infomation > view:nth-child(2) {
+  margin-top: 10rpx;
+}
+
+.invalid-entrance {
+  text-align: center;
+  margin-top: 40rpx;
+}
+
+.coupon-type > view {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10rpx;
+}
+
+.coupon-type > view:nth-child(3) {
+  left: -10rpx;
+}
+
+.coupon-type > view:nth-child(4) {
+  right: -10rpx;
+}
+
+.coupon-type::before, .coupon-type::after {
+  content: '';
+  width: 10rpx;
+  height: 20rpx;
+  background-color: #fff;
+  position: absolute;
+  bottom: -10rpx;
+  z-index: 2;
+}
+
+.coupon-type::before {
+  left: -12rpx;
+}
+
+.coupon-type::after {
+  right: -12rpx;
+}

@@ -1,0 +1,326 @@
+/* pages/home/home.wxss */
+@import "../../template/eleInfo/eleInfo.wxss";
+@import "../../template/popup/popup.wxss";
+
+.ele-banner, .ele-operate, .ele-scan {
+  position: relative;
+}
+
+/* banner */
+
+.ele-banner {
+  width: 100%;
+  height: 370rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.ele-banner-inner, .ele-banner-inner > swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.ele-banner-inner > swiper image.slide-image {
+  width: 100%;
+}
+
+.ele-info {
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+  right: 20rpx;
+}
+
+.ele-info > view:nth-child(1), .ele-info > view:nth-child(3) {
+  display: inline-block;
+  height: 56rpx;
+  line-height: 52rpx;
+  padding: 0 20rpx 0 60rpx;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+
+.ele-info > view:nth-child(2) {
+  height: 20rpx;
+}
+
+.ele-info > view:nth-child(1) > image, .ele-info > view:nth-child(3) > image {
+  height: 40rpx;
+  width: 40rpx;
+  top: 5rpx;
+  position: absolute;
+  left: 10rpx;
+}
+
+.ele-info > view:nth-child(3) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* banner */
+
+/* ele-list */
+
+.ele-list-inner {
+  padding: 20rpx 40rpx;
+}
+
+.list-type {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.list-type image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.list-type > view:nth-last-child(1) {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  line-height: 50rpx;
+}
+
+.station-list-show, .coupons-list {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.station-list-show > view:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-height: 750rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.station-list {
+  max-height: 600rpx;
+  overflow: hidden;
+}
+
+.station-list > view {
+  overflow-y: scroll;
+  max-height: 600rpx;
+}
+
+.station-list-name {
+  text-align: center;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.station-list-name> text {
+  display: inline-block;
+  width: 200rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.station-item {
+  height: 100rpx;
+  box-sizing: border-box;
+  line-height: 100rpx;
+  padding: 0 40rpx;
+  margin-top: 20rpx;
+}
+
+.close {
+  border: 4rpx solid #000;
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.close > image {
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.current-station {
+  border-bottom: 4rpx solid #000;
+  padding-bottom: 20rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.current-station>image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+}
+
+/* ele-list */
+
+/* ele-manual */
+
+.ele-manual-inner {
+  padding: 20rpx 40rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ele-manual-inner > view:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rules {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  line-height: 50rpx;
+  text-align: center;
+  margin-left: 10rpx;
+}
+
+.rules image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+/* ele-manual */
+
+/* ele-operate */
+
+.ele-operate-inner {
+  text-align: center;
+  padding-bottom: 40rpx;
+}
+
+.ele-scan {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 40rpx auto;
+  padding: 20rpx;
+}
+
+.ele-scan-text {
+  width: 100%;
+  height: 100%;
+  line-height: 112rpx;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.transparen-view {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+}
+
+.ele-scan .transparen-view:nth-child(2) {
+  top: -20rpx;
+  left: 40rpx;
+  height: 40rpx;
+}
+
+.ele-scan .transparen-view:nth-child(3) {
+  bottom: -20rpx;
+  left: 40rpx;
+  height: 40rpx;
+}
+
+.ele-scan .transparen-view:nth-child(4) {
+  top: 40rpx;
+  left: -60rpx;
+}
+
+.ele-scan .transparen-view:nth-child(5) {
+  top: 40rpx;
+  right: -60rpx;
+}
+
+/* ele-operate */
+
+/* ele-copyright */
+
+.ele-copyright {
+  margin-top: 40rpx;
+  text-align: center;
+  font-weight: normal;
+}
+
+/* ele-copyright */
+
+.limit-scroll {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+  top: 0;
+}
+
+/* ing-order */
+
+.ing-item {
+  height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 58rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.ing-item > view {
+  height: 100%;
+}
+
+.ing-item > text {
+  padding-right: 20rpx;
+}
+
+.really-progress{
+  height: 100%;
+}
+
+
+.progress-number{
+  padding-right: 20rpx;
+}
+.ing-item > view:nth-child(2) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.ing-item > view:nth-child(2) > text:nth-child(1) {
+  padding-left: 20rpx;
+}
+
+/* ing-order */
+
+.mask {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  width: 100%;
+}

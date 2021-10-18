@@ -1,0 +1,23 @@
+/* pages/question/question.wxss */
+.question-type{
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.question-type > image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.qustion-answer{
+  display: -webkit-box;
+  font-weight: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  overflow: hidden;
+}
+
+.question-box{
+  height: 40rpx;
+  position: relative;
+}

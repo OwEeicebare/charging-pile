@@ -1,0 +1,26 @@
+<template name="popup">
+  <view class="page-popup common-font">
+    <view class="popup-wrap">
+      <view class="popup default-bg common-border common-radius">
+        <view class="coupon-title">
+          <text>{{disTicketName}}</text>
+          <view class="common-border" data-operate="close">
+            <image src="../../images/home/icon_close.svg" data-operate="close" data-couponid="{{id}}"></image>
+          </view>
+        </view>
+        <view class="normal-weight">送您的</view>
+        <view class="coupon-popup-list">
+          <view class="common-margin popup-item">
+            <image src="../../images/home/img_bg_popup_coupon.svg"></image>
+            <view class="coupon-content">
+              <view>{{useCondition ? '满' + useCondition : '无门槛'}}减{{subFullDynamice}}元</view>
+              <view class="common-middle-font">到期时间：{{endTime}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="common-margin normal-weight">已存入您的优惠券列表</view>
+        <button class="green common-border common-radius receive-btn" data-operate="close" data-couponid="{{id}}">确认</button>
+      </view>
+    </view>
+  </view>
+</template>
